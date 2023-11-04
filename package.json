@@ -8,5 +8,11 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "eslint-plugin-testcafe": "^0.2.1"
+  },
+  "devDependencies": {
+    "testcafe": "^3.3.0"
+  }
 }
