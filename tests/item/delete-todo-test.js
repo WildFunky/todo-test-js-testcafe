@@ -2,14 +2,14 @@ import {createSetOfTodos, getTestTodoItemsLength} from "../../heplers/test-data-
 import {getNumberOfTodosInLocalStorage} from "../../heplers/browser-storage-helper";
 import page from "../../page-model/todo-page-model";
 
-const numberOfItem = 1;
+let secondTodoNumber = 1;
 let todoItem;
 
 fixture`TODO-delete`
     .beforeEach(async t => {
         await createSetOfTodos(t);
         await t.expect(await getNumberOfTodosInLocalStorage(t)).eql(getTestTodoItemsLength());
-        todoItem = await page.getTodoByNumber(numberOfItem);
+        todoItem = await page.getTodoByNumber(secondTodoNumber);
     });
 
 test('should allow me to delete an item', async t => {

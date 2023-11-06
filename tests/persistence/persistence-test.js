@@ -5,14 +5,13 @@ import {
 } from "../../heplers/browser-storage-helper";
 import page from "../../page-model/todo-page-model";
 
-const numberOfItem = 1;
 let todoItems;
 
 fixture`TODO-persistence`
     .beforeEach(async t => {
         await createSetOfTodos(t);
         await t.expect(await getNumberOfTodosInLocalStorage(t)).eql(getTestTodoItemsLength());
-        todoItems = await page.getAllTodoItems(getTestTodoItemsLength());
+        todoItems = await page.getAllTodoItems(t);
     });
 
 test('should persist its data when page reloaded', async t => {

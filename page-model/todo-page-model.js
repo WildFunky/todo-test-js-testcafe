@@ -1,4 +1,5 @@
 import {Selector} from 'testcafe';
+import {getNumberOfTodosInLocalStorage} from "../heplers/browser-storage-helper";
 
 class TodoItem {
     constructor(number) {
@@ -16,13 +17,14 @@ class TodoPage {
     constructor() {
         this.newTodoInput = Selector('input');
         this.todosList = Selector('todo-app li');
-        this.todoCount = Selector('.todo-count');
+        this.todoCounter = Selector('.todo-count');
         this.clearCompleted = Selector('.clear-completed');
     }
 
-    async getAllTodoItems(numberOfItems) {
+    async getAllTodoItems(t) {
         const todoItems = [];
-        for (let i = 0; i < numberOfItems; i++) {
+        const numberOfCreatedItems = await getNumberOfTodosInLocalStorage(t)
+        for (let i = 0; i < numberOfCreatedItems; i++) {
             todoItems.push(new TodoItem(i))
         }
         return todoItems;
@@ -34,4 +36,3 @@ class TodoPage {
 }
 
 export default new TodoPage();
-
