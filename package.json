@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "eslint-plugin-testcafe": "^0.2.1"
+    "eslint-plugin-testcafe": "^0.2.1",
+    "testcafe-reporter-allure": "^1.0.5"
   },
   "devDependencies": {
     "testcafe": "^3.3.0"

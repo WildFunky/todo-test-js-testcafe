@@ -3,10 +3,12 @@ module.exports = {
     browsers: ["chrome"],
     baseUrl: "https://todomvc.com/examples/angular2/",
     skipJsErrors: true,
-    // reporter: [
-    //     {
-    //         "name": "json",
-    //         "output": "reports/report.json"
-    //     }
-    // ]
+    reporter: [
+        {
+            "name": "list"
+        },
+        {
+            "name": "allure"
+        }
+    ]
 }

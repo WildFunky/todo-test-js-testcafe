@@ -3,12 +3,12 @@ import {TODO_ITEMS} from "../test-data/test-data";
 
 export async function createSetOfTodos(t) {
     for (let item of TODO_ITEMS) {
-        await passTextToInput(t, page.todoInput, item);
+        await passTextToInput(t, page.newTodoInput, item);
     }
 }
 
 export async function createOneTodo(t) {
-    await passTextToInput(t, page.todoInput, TODO_ITEMS[0]);
+    await passTextToInput(t, page.newTodoInput, TODO_ITEMS[0]);
 }
 
 export async function passTextToInput(t, inputSelector, text) {
@@ -28,6 +28,6 @@ export async function removeCharsFromEnd(t, selector, numberOfChars) {
     await t.pressKey('enter');
 }
 
-export function getTodosLength() {
+export function getTestTodoItemsLength() {
     return TODO_ITEMS.length
 }
