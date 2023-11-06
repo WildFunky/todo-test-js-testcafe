@@ -10,15 +10,15 @@ let todoItems;
 fixture`TODO-persistence`
     .beforeEach(async t => {
         await createSetOfTodos(t);
-        await t.expect(await getNumberOfTodosInLocalStorage(t)).eql(getTestTodoItemsLength());
-        todoItems = await page.getAllTodoItems(t);
+        await t.expect(await getNumberOfTodosInLocalStorage()).eql(getTestTodoItemsLength());
+        todoItems = await page.getAllTodoItems();
     });
 
 test('should persist its data when page reloaded', async t => {
     await t.click(todoItems[0].checkBox);
-    await t.expect(await getNumberOfCompletedTodosInLocalStorage(t)).eql(1);
+    await t.expect(await getNumberOfCompletedTodosInLocalStorage()).eql(1);
     await t.eval(() => location.reload());
     await t
-        .expect(await getNumberOfCompletedTodosInLocalStorage(t)).eql(1)
-        .expect(await getNumberOfTodosInLocalStorage(t)).eql(getTestTodoItemsLength());
+        .expect(await getNumberOfCompletedTodosInLocalStorage()).eql(1)
+        .expect(await getNumberOfTodosInLocalStorage()).eql(getTestTodoItemsLength());
 })

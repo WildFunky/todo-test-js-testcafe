@@ -28,5 +28,5 @@ test('should not allow me to create a todo with an empty value', async t => {
     await passTextToInput(t, page.newTodoInput, FOUR_SPACES_STRING);
     await t
         .expect(page.todosList.count).eql(getTestTodoItemsLength())
-        .expect(await getNumberOfTodosInLocalStorage(t)).eql(getTestTodoItemsLength());
+        .expect(await getNumberOfTodosInLocalStorage()).eql(getTestTodoItemsLength());
 })

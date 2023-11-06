@@ -9,5 +9,5 @@ test('should increment counter value when items are added', async t => {
     await createSetOfTodos(t);
     await t
         .expect(page.todoCounter.textContent).eql(`${getTestTodoItemsLength() + 1} items left`)
-        .expect(await getNumberOfTodosInLocalStorage(t)).eql(getTestTodoItemsLength() + 1);
+        .expect(await getNumberOfTodosInLocalStorage()).eql(getTestTodoItemsLength() + 1);
 })

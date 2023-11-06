@@ -11,8 +11,8 @@ let todos;
 fixture`TODO-complete`
     .beforeEach(async t => {
         await createSetOfTodos(t);
-        await t.expect(await getNumberOfTodosInLocalStorage(t)).eql(getTestTodoItemsLength());
-        todos = await page.getAllTodoItems(t);
+        await t.expect(await getNumberOfTodosInLocalStorage()).eql(getTestTodoItemsLength());
+        todos = await page.getAllTodoItems();
     });
 
 test('should allow me to mark one item as competed', async t => {
@@ -20,7 +20,7 @@ test('should allow me to mark one item as competed', async t => {
     await t
         .expect(todos[secondTodoNumber].isCompleted).ok()
         .expect(await getNumberOfCompletedTodos()).eql(1)
-        .expect(await getNumberOfCompletedTodosInLocalStorage(t)).eql(1);
+        .expect(await getNumberOfCompletedTodosInLocalStorage()).eql(1);
 })
 
 test('should allow me to remove all completed items', async t => {
@@ -30,9 +30,9 @@ test('should allow me to remove all completed items', async t => {
     }
     await t
         .expect(await getNumberOfCompletedTodos()).eql(numberOfItemsToBeChecked)
-        .expect(await getNumberOfCompletedTodosInLocalStorage(t)).eql(numberOfItemsToBeChecked);
+        .expect(await getNumberOfCompletedTodosInLocalStorage()).eql(numberOfItemsToBeChecked);
     await t.click(page.clearCompleted);
-    await t.expect(await getNumberOfTodosInLocalStorage(t)).eql(todos.length - numberOfItemsToBeChecked);
+    await t.expect(await getNumberOfTodosInLocalStorage()).eql(todos.length - numberOfItemsToBeChecked);
 })
 
 test('should be hidden when there are no items that are completed', async t => {

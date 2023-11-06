@@ -21,9 +21,9 @@ class TodoPage {
         this.clearCompleted = Selector('.clear-completed');
     }
 
-    async getAllTodoItems(t) {
+    async getAllTodoItems() {
         const todoItems = [];
-        const numberOfCreatedItems = await getNumberOfTodosInLocalStorage(t)
+        const numberOfCreatedItems = await getNumberOfTodosInLocalStorage()
         for (let i = 0; i < numberOfCreatedItems; i++) {
             todoItems.push(new TodoItem(i))
         }

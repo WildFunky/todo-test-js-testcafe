@@ -15,7 +15,7 @@ let todoItem;
 fixture`TODO-edit`
     .beforeEach(async t => {
         await createSetOfTodos(t);
-        await t.expect(await getNumberOfTodosInLocalStorage(t)).eql(getTestTodoItemsLength());
+        await t.expect(await getNumberOfTodosInLocalStorage()).eql(getTestTodoItemsLength());
         todoItem = await page.getTodoByNumber(numberOfItem);
     });
 
@@ -33,7 +33,7 @@ test('should remove todo item when all text is deleted', async t => {
     await removeCharsFromEnd(t, todoItem.item, TODO_ITEMS[numberOfItem].length);
     await t
         .expect(page.todosList.count).eql(getTestTodoItemsLength() - 1)
-        .expect(await getNumberOfTodosInLocalStorage(t)).eql(getTestTodoItemsLength() - 1);
+        .expect(await getNumberOfTodosInLocalStorage()).eql(getTestTodoItemsLength() - 1);
 });
 
 test('should hide controls when editing', async t => {
