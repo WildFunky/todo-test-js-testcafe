@@ -1,10 +1,5 @@
 import page from "../../page-model/todo-page-model";
-import {
-    createSetOfTodos,
-    getTestTodoItemsLength,
-    passTextToInput,
-    removeCharsFromEnd
-} from "../../heplers/test-data-helper";
+import {createSetOfTodos, getTestTodoItemsLength, passTextToInput, removeCharsFromEnd} from "../../heplers/test-data-helper";
 import {getNumberOfTodosInLocalStorage} from "../../heplers/browser-storage-helper";
 import {TEXT_TO_ADD, TODO_ITEMS} from "../../test-data/test-data";
 import {isElementVisible} from "../../heplers/elements-helper";

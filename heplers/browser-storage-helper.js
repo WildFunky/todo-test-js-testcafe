@@ -1,4 +1,4 @@
-import { ClientFunction } from 'testcafe';
+import {ClientFunction} from 'testcafe';
 
 const getLocalStorage = ClientFunction(() => window.localStorage.getItem('angular2-todos'))
 

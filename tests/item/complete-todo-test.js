@@ -1,7 +1,5 @@
 import {createSetOfTodos, getTestTodoItemsLength} from "../../heplers/test-data-helper";
-import {
-    getNumberOfCompletedTodosInLocalStorage, getNumberOfTodosInLocalStorage
-} from "../../heplers/browser-storage-helper";
+import {getNumberOfCompletedTodosInLocalStorage, getNumberOfTodosInLocalStorage} from "../../heplers/browser-storage-helper";
 import page from "../../page-model/todo-page-model";
 import {isElementVisible} from "../../heplers/elements-helper";
 
