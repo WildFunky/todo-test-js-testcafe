@@ -33,14 +33,14 @@ test('should remove todo item when all text is deleted', async t => {
 });
 
 test('should hide controls when editing', async t => {
-    await t.hover(testTodoItem.item)
+    await t.hover(testTodoItem.item);
     await t
         .expect(await isElementVisible(testTodoItem.deleteButton)).ok()
-        .expect(await isElementVisible(testTodoItem.checkBox)).ok()
-    await t.doubleClick(testTodoItem.item)
+        .expect(await isElementVisible(testTodoItem.checkBox)).ok();
+    await t.doubleClick(testTodoItem.item);
     await t
         .expect(await isElementVisible(testTodoItem.deleteButton)).notOk()
-        .expect(await isElementVisible(testTodoItem.checkBox)).notOk()
+        .expect(await isElementVisible(testTodoItem.checkBox)).notOk();
 })
 
 test('should cancel edit when escape button pressed', async t => {
@@ -48,5 +48,5 @@ test('should cancel edit when escape button pressed', async t => {
         .doubleClick(await testTodoItem.label)
         .typeText(testTodoItem.item, TEXT_TO_ADD)
         .pressKey('esc')
-        .expect(testTodoItem.textContent).eql(initialText)
+        .expect(testTodoItem.textContent).eql(initialText);
 })

@@ -15,7 +15,7 @@ fixture`TODO-complete`
     });
 
 test('should allow me to mark one item as competed', async t => {
-    await t.click(todos[TEST_TODO_NUMBER].checkBox)
+    await t.click(todos[TEST_TODO_NUMBER].checkBox);
     await t
         .expect(todos[TEST_TODO_NUMBER].isCompleted).ok()
         .expect(await getNumberOfCompletedTodos()).eql(1)
@@ -35,9 +35,9 @@ test('should allow me to remove all completed items', async t => {
 })
 
 test('should be hidden when there are no items that are completed', async t => {
-    await t.click(todos[TEST_TODO_NUMBER].checkBox)
+    await t.click(todos[TEST_TODO_NUMBER].checkBox);
     await t.expect(await isElementVisible(page.clearCompleted)).ok();
-    await t.click(page.clearCompleted)
+    await t.click(page.clearCompleted);
     await t.expect(await isElementVisible(page.clearCompleted)).notOk();
 })
 

@@ -29,5 +29,5 @@ export async function removeCharsFromEnd(t, selector, numberOfChars) {
 }
 
 export function getTestTodoItemsLength() {
-    return TODO_INPUTS.length
+    return TODO_INPUTS.length;
 }

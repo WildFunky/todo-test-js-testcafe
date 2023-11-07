@@ -17,7 +17,7 @@ export async function getAllTodoItemsOnPage() {
     const todoItems = [];
     const numberOfCreatedItems = await getNumberOfTodosInLocalStorage()
     for (let i = 0; i < numberOfCreatedItems; i++) {
-        todoItems.push(new TodoComponent(i))
+        todoItems.push(new TodoComponent(i));
     }
     return todoItems;
 }

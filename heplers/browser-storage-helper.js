@@ -1,6 +1,6 @@
 import {ClientFunction} from 'testcafe';
 
-const getLocalStorage = ClientFunction(() => window.localStorage.getItem('angular2-todos'))
+const getLocalStorage = ClientFunction(() => window.localStorage.getItem('angular2-todos'));
 
 export async function getNumberOfTodosInLocalStorage() {
     return JSON.parse(await getLocalStorage())
