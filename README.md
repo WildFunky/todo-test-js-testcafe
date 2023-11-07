@@ -21,4 +21,4 @@ Latest LTS version of [Node.js](https://nodejs.org/en)
 `npm i`
 
 #### Execution
-`testcafe`
+`npx testcafe`
