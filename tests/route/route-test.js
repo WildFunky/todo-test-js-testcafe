@@ -1,6 +1,6 @@
 import {WRONG_URL} from "../../test-data/test-data";
 import notFoundPage from "../../page-model/not-found-page-model";
-import {NOT_FOUND} from "../../constants/status-constants";
+import {NOT_FOUND} from "../../constants/http-status-constants";
 
 fixture`TODO-routing`
 
