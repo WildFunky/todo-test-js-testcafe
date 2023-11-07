@@ -5,7 +5,7 @@ import {EMPTY_STRING} from "../../test-data/test-data";
 
 fixture`TODO-counter`
 
-const expectedText = (number) => `${number} item${number > 1 ? 's' : EMPTY_STRING} left`
+const expectedText = (number) => `${number} item${number > 1 ? 's' : EMPTY_STRING} left`;
 
 test('should increment counter value when items are added', async t => {
     await createOneTodo(t);

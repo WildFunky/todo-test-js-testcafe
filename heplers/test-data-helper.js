@@ -14,7 +14,7 @@ export async function createOneTodo(t) {
 export async function passTextToInput(t, inputSelector, text) {
     await t
         .typeText(inputSelector, text)
-        .pressKey('Enter');
+        .pressKey('enter');
 }
 
 export async function removeCharsFromEnd(t, selector, numberOfChars) {

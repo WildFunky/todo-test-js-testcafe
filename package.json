@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Aleksandr Subach",
   "license": "ISC",
   "dependencies": {
     "eslint-plugin-testcafe": "^0.2.1",
