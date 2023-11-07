@@ -1,4 +1,4 @@
-export const TODO_ITEMS = [
+export const TODO_INPUTS = [
     'call Grandma',
     'wash the cat',
     'buy tickets for the new movie with Nicolas Cage'

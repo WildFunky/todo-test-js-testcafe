@@ -1,20 +1,20 @@
 import page from "../../page-model/todo-page-model";
 import {createOneTodo, createSetOfTodos, getTestTodoItemsLength, passTextToInput} from "../../heplers/test-data-helper";
 import {getNumberOfTodosInLocalStorage} from "../../heplers/browser-storage-helper";
-import {EMPTY_STRING, FOUR_SPACES_STRING, TODO_ITEMS} from "../../test-data/test-data";
+import {EMPTY_STRING, FOUR_SPACES_STRING, TODO_INPUTS} from "../../test-data/test-data";
 
 fixture`TODO-create`;
 
 test('should allow me to add one todo item', async t => {
     await createOneTodo(t);
-    await t.expect(page.todosList.textContent).contains(TODO_ITEMS[0]);
+    await t.expect(page.todosList.textContent).contains(TODO_INPUTS[0]);
 });
 
 test('should allow me to add set of todo items', async t => {
     await createSetOfTodos(t);
-    await t.expect(page.todosList.count).eql(TODO_ITEMS.length);
-    for (let i = 0; i < TODO_ITEMS; i++) {
-        await t.expect(page.todosList.nth(i).textContent).contains(TODO_ITEMS[i]);
+    await t.expect(page.todosList.count).eql(TODO_INPUTS.length);
+    for (let i = 0; i < TODO_INPUTS; i++) {
+        await t.expect(page.todosList.nth(i).textContent).contains(TODO_INPUTS[i]);
     }
 });
 
